@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html id = "htmlID" class="htmlClass">
+	<head>
+		<title>CPS630 Lab 2</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="lab2.css">
+		<script type = "application/javascript"></script>
+		<script src="lab2script.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+	</head>
+	<body id="bodyID" onload="background_func()">
+		<aside class = "row">
+			<aside class="col-1 col-m-1 col-m-m-0"></aside>
+			<aside class="col-11 col-m-11 col-m-m-12">
+				City: <input type= "text" id="inCity">
+				<select>
+				<option id="C">&#8451;</option>
+				<option id="F">&#8457;</option>
+				</select>
+				<button id = "search" onclick="retriever()">Search</button>
+			</aside>
+		
+		<aside class = row>
+			<aside class="col-1 col-m-1 col-m-m-0"></aside>
+			<aside class = "col-2 col-m-3 col-m-m-2">
+				<div id="Name"></div>
+				<div id="Date"></div>
+			</aside>
+			<aside class = "col-0 col-m-2 col-m-m-0"></aside>
+			<aside class = "col-3 col-m-3 col-m-m-3">
+				<aside class="main-icon">
+					<img id="Icon" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon">
+				</aside>
+				<aside class="temp-cond">
+					<div id="Temp"></div>
+					<div id="cond"></div>
+				</aside>
+			</aside>
+			<aside class="col-0 col-m-3 col-m-m-0"></aside>
+			<aside class ="col-4 col-m-4 col-m-m-3">
+				<div><img id="IconWind" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"><p id="Wind"></p></div>
+				<div><img id="IconHum" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"><p id="Hum"></p></div>
+			</aside>
+			<aside class= "col-2 col-m-8 col-m-m-0"></aside>
+		</aside>
+		
+		<ul class="tab">
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event,'day')">6 Day Forecast</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event,'hourly')">Hourly Forecast</a></li>
+		</ul>
+		
+		<aside id = "day" class = "row tabcontent">
+			<aside class="col-1"></aside>
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon2" class="Icon2" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow2"></aside>
+				<aside id="day2"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon3" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="Icon3" alt="icon"/>
+				<aside id="Dow3"></aside>
+				<aside id="day3"></aside>
+			</aside>
+		
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon4" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="Icon4" alt="icon"/>
+				<aside id="Dow4"></aside>
+				<aside id="day4"></aside>
+			</aside>
+		
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon5" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="Icon5" alt="icon"/>
+				<aside id="Dow5"></aside>
+				<aside id="day5"></aside>
+			</aside>
+				
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon6" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="Icon6" alt="icon"/>
+				<aside id="Dow6"></aside>
+				<aside id="day6"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon7" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="Icon7" alt="icon"/>
+				<aside id="Dow7"></aside>
+				<aside id="day7"></aside>
+			</aside>			
+		</aside>
+		
+		<aside id="hourly" class="row tabcontent">
+			<aside class="col-1"></aside>
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon8" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow8"></aside>
+				<aside id="day8"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon9" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow9"></aside>
+				<aside id="day9"></aside>
+			</aside>
+		
+			<aside class = "col-1 col-m-3 col-m-m-3">
+				<img id="Icon10" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow10"></aside>
+				<aside id="day10"></aside>
+			</aside>
+		
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon11" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow11"></aside>
+				<aside id="day11"></aside>
+			</aside>
+				
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon12" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow12"></aside>
+				<aside id="day12"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon13" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow13"></aside>
+				<aside id="day13"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon14" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow14"></aside>
+				<aside id="day14"></aside>
+			</aside>
+			
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon15" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow15"></aside>
+				<aside id="day15"></aside>
+			</aside>
+
+			<aside class = "col-1 col-m-4 col-m-m-4">
+				<img id="Icon16" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="icon"/>
+				<aside id="Dow16"></aside>
+				<aside id="day16"></aside>
+			</aside>
+		</aside>
+		
+		<footer>
+			<details>
+				<summary>Copyright</summary>
+				<p>Mahathelge Hareen Peiris, 500xxxxxx</p>
+			</details>
+		</footer>
+	</body>
+</html>
